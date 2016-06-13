@@ -50,6 +50,8 @@ module Faraday
           end
         end
 
+        opts[:persistent] = true
+
         conn = ::Excon.new(env[:url].to_s, opts.merge(@connection_options))
 
         resp = conn.request \
